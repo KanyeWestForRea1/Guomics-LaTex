@@ -1,0 +1,185 @@
+% Project:  Guomics-LaTex
+% main.tex - main template
+% content.tex - the body of course report 
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[
+    top=1.7cm,
+    bottom=1.7cm,
+    left=1.7cm,
+    right=1.7cm
+]{geometry}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{indentfirst}
+\usepackage{array} % for customizing the table
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs} % for better quality horizontal lines
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[style=nature]{biblatex}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fancytabs}
+\usepackage[parfill]{parskip}
+\captionsetup[figure]{labelfont=bf}
+\captionsetup[table]{labelfont=bf}
+
+
+
+% ------------------------------------
+% define new commands
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\ttdefault}{cmtt}
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\newcommand{\name}{XXX XXX}
+\newcommand{\ID}{xxxxxx}
+\newcommand{\school}{Westlake University}
+% ------------------------------------
+
+
+\hypersetup{ % play with the different link colors here
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour}, % background color
+    commentstyle=\color{codegreen},     % comment style
+    keywordstyle=\color{magenta},       % keyword style
+    numberstyle=\tiny\color{codegray},  % number style
+    stringstyle=\color{codepurple},     % string literal style
+    basicstyle=\ttfamily\footnotesize,  % font style
+    breakatwhitespace=false,            % automatic breaks only at whitespace
+    breaklines=true,                    % automatic line breaking only at whitespace
+    captionpos=b,                       % caption-position is bottom
+    keepspaces=true,                    % keeps spaces in text
+    numbers=none,                       % where to put the line-numbers
+    numbersep=5pt,                      % how far the line-numbers are from the code
+    showspaces=false,                   % show spaces adding particular underscores
+    showstringspaces=false,             % underline spaces within strings
+    showtabs=false,                     % show tabs within strings adding particular underscores
+    tabsize=2,                          % sets default tabsize to 2 spaces
+    frame=single,                       % adds a frame around the code
+    rulecolor=\color{codegray},         
+    framerule=0pt,                      % frame thickness
+    abovecaptionskip=1em,
+    belowcaptionskip=1em
+}
+\lstset{style=mystyle}
+\setcounter{secnumdepth}{3}
+\addbibresource{references.bib}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot[C]{\thepage} 
+\renewcommand{\headrulewidth}{0pt} 
+\renewcommand{\footrulewidth}{0pt} 
+\setcounter{page}{1}
+
+
+% ------------------------------------
+% titlepage
+\begin{document}
+\begin{titlepage}
+    \thispagestyle{fancy}
+    \fancyfoot[C]{\thepage}
+    % logo
+    \centering
+    \begin{textblock*}{5cm}(0.5cm, 1.1cm) 
+        \noindent 
+        \includegraphics[width=0.6\linewidth]{figures/logo.png} 
+    \end{textblock*} 
+    \begin{textblock*}{5cm}(4cm, 1.2cm) 
+        \noindent 
+        \includegraphics[width=0.7\linewidth]{figures/westlakelab.png}
+    \end{textblock*}
+    \begin{textblock*}{5cm}(6.5cm, 1.2cm) 
+        \noindent
+        \includegraphics[width=0.28\linewidth]{figures/guomics.png}
+    \end{textblock*}
+    \begin{textblock*}{5cm}(9cm, 1.3cm) 
+        \noindent
+        \includegraphics[width=0.6\linewidth]{figures/WeCIP.png}
+    \end{textblock*}
+    \vspace*{10pt} 
+    \HRule{1pt} 
+    \begin{center}
+    \parbox{\linewidth}{\centering\Huge\textbf{This is the title}}
+    \end{center}
+    \HRule{2pt}
+    \vspace{2pt}
+    
+    \begin{center}
+    \large
+    \begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \textbf{First Author}\textsuperscript{1,2,*}\thanks{These authors contributed equally to this work.} \\
+    \texttt{iauthor@gmail.com}
+    \end{minipage}
+    \begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \textbf{Second Author}\textsuperscript{2,3} \\
+    \texttt{iiauthor@gmail.com}
+    \end{minipage}
+    \begin{minipage}[t]{0.3\textwidth}
+    \centering
+    \textbf{Third Author}\textsuperscript{1,2} \\
+    \texttt{iiiauthor@gmail.com}
+    \end{minipage} \\[1cm]
+    \footnotesize
+    \textsuperscript{1}Department Name, University Name ;
+    \textsuperscript{2}Another Department, University Name ;
+    \textsuperscript{3}Third Department, University Name ;
+    \textsuperscript{*}Corresponding author
+    \end{center}
+    \vspace{1cm}
+
+
+    
+    \begin{minipage}{0.9\textwidth}
+    \begin{center}
+    \textbf{\large Abstract}
+    \end{center}
+    \large
+    This study investigates the proteomic changes in Alzheimer disease associated with progressive amyloid-beta plaque and tau tangle pathologies. Through comprehensive proteomic analysis, we identified key protein alterations that correlate with disease progression. Our findings reveal significant changes in synaptic proteins, inflammatory markers, and metabolic enzymes. These results provide new insights into the molecular mechanisms underlying Alzheimer disease pathogenesis and suggest potential therapeutic targets for disease intervention.
+    \end{minipage}
+
+
+    \vspace{11cm}
+    \begin{minipage}{0.9\textwidth}
+    \begin{center}
+    \end{center}
+    \large
+    \textbf{Keywords:} proteomics; mass spectrometry
+    \end{minipage}
+    
+
+\end{titlepage}
+% ------------------------------------
+
+
+% ------------------------------------
+% main body
+\newpage
+\input{content.tex}
+% ------------------------------------
+
+
+\end{document}
