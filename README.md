@@ -1,4 +1,4 @@
-# Guomics-LaTex
+# Guomics-LaTeX
 This repository contains a LaTeX template for creating documents inside Guomics. It is designed to be user-friendly and customizable, helping you to maintain a consistent and professional look across various academic documents.
 
 
@@ -7,7 +7,7 @@ This repository contains a LaTeX template for creating documents inside Guomics.
 
 ## Project Structure
 ```markdown
-WestlakeU LaTeX Project
+Guomics LaTeX
 ├── main.tex
 ├── content.tex
 └── figures
